@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "i8H2zoCwtu8=",
+  "dgSpecHash": "dFy1DO4rJX4=",
   "success": true,
   "projectFilePath": "/Users/bakitoplu/Desktop/Asp.Net Core Web API/bookDemo/bookDemo.csproj",
   "expectedPackageFiles": [
+    "/Users/bakitoplu/.nuget/packages/microsoft.aspnetcore.jsonpatch/10.0.5/microsoft.aspnetcore.jsonpatch.10.0.5.nupkg.sha512",
+    "/Users/bakitoplu/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/10.0.5/microsoft.aspnetcore.mvc.newtonsoftjson.10.0.5.nupkg.sha512",
     "/Users/bakitoplu/.nuget/packages/microsoft.aspnetcore.openapi/10.0.5/microsoft.aspnetcore.openapi.10.0.5.nupkg.sha512",
     "/Users/bakitoplu/.nuget/packages/microsoft.openapi/2.4.1/microsoft.openapi.2.4.1.nupkg.sha512",
+    "/Users/bakitoplu/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/bakitoplu/.nuget/packages/newtonsoft.json.bson/1.0.2/newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "/Users/bakitoplu/.nuget/packages/swashbuckle.aspnetcore.swagger/10.1.7/swashbuckle.aspnetcore.swagger.10.1.7.nupkg.sha512",
     "/Users/bakitoplu/.nuget/packages/swashbuckle.aspnetcore.swaggergen/10.1.7/swashbuckle.aspnetcore.swaggergen.10.1.7.nupkg.sha512",
     "/Users/bakitoplu/.nuget/packages/swashbuckle.aspnetcore.swaggerui/10.1.7/swashbuckle.aspnetcore.swaggerui.10.1.7.nupkg.sha512"
