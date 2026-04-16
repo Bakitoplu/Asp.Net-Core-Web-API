@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Z7sZK50NbaE=",
+  "dgSpecHash": "i6ztovRiwAk=",
   "success": true,
   "projectFilePath": "/Users/bakitoplu/Desktop/Asp.Net Core Web API/bsStoreApp/WebAPI/WebAPI.csproj",
   "expectedPackageFiles": [
     "/Users/bakitoplu/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
-    "/Users/bakitoplu/.nuget/packages/microsoft.aspnetcore.jsonpatch/10.0.5/microsoft.aspnetcore.jsonpatch.10.0.5.nupkg.sha512",
-    "/Users/bakitoplu/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/10.0.5/microsoft.aspnetcore.mvc.newtonsoftjson.10.0.5.nupkg.sha512",
+    "/Users/bakitoplu/.nuget/packages/microsoft.aspnetcore.jsonpatch/10.0.6/microsoft.aspnetcore.jsonpatch.10.0.6.nupkg.sha512",
+    "/Users/bakitoplu/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/10.0.6/microsoft.aspnetcore.mvc.newtonsoftjson.10.0.6.nupkg.sha512",
     "/Users/bakitoplu/.nuget/packages/microsoft.aspnetcore.openapi/10.0.5/microsoft.aspnetcore.openapi.10.0.5.nupkg.sha512",
     "/Users/bakitoplu/.nuget/packages/microsoft.build.framework/18.0.2/microsoft.build.framework.18.0.2.nupkg.sha512",
     "/Users/bakitoplu/.nuget/packages/microsoft.codeanalysis.analyzers/3.11.0/microsoft.codeanalysis.analyzers.3.11.0.nupkg.sha512",

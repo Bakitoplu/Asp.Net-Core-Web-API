@@ -2,7 +2,7 @@ using System.Data;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.Repositories;
 using WebAPI.Models;
-
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace WebAPI.Controllers
 {
@@ -126,6 +126,17 @@ namespace WebAPI.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        
+        [HttpPatch("{id:int}")]
+        public IActionResult PartiallyUpdateOneBook([FromRoute(Name = "id")]int id, 
+            [FromBody] JsonPatchDocument<Book> bookPatch)
+        {
+            // check entity
+            var entity = _context.Books.Where(b => b.Id.Equals(id)).SingleOrDefault();
+            if (entity is null)
+                return NotFound(); // 404
+            bookPatch.ApplyTo(entity);
+            _context.SaveChanges();
+             return NoContent (); //204
+        }
     }
 }
