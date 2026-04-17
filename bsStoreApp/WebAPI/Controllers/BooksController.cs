@@ -1,7 +1,7 @@
 using System.Data;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.Repositories;
-using WebAPI.Models;
+using Entities.Models;
 using Microsoft.AspNetCore.JsonPatch;
 
 namespace WebAPI.Controllers

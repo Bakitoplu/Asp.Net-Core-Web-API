@@ -127,3 +127,5 @@
 /Users/bakitoplu/Desktop/Asp.Net Core Web API/bsStoreApp/WebAPI/obj/Debug/net10.0/WebAPI.pdb
 /Users/bakitoplu/Desktop/Asp.Net Core Web API/bsStoreApp/WebAPI/obj/Debug/net10.0/WebAPI.genruntimeconfig.cache
 /Users/bakitoplu/Desktop/Asp.Net Core Web API/bsStoreApp/WebAPI/obj/Debug/net10.0/ref/WebAPI.dll
+/Users/bakitoplu/Desktop/Asp.Net Core Web API/bsStoreApp/WebAPI/bin/Debug/net10.0/Entities.dll
+/Users/bakitoplu/Desktop/Asp.Net Core Web API/bsStoreApp/WebAPI/bin/Debug/net10.0/Entities.pdb
