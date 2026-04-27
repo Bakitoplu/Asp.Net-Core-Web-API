@@ -1,11 +1,14 @@
 using Microsoft.EntityFrameworkCore;
-using WebAPI.Repositories;
+using Repositories.EFCore;
+using WebAPI.Extentions;
 var builder = WebApplication.CreateBuilder(args);
+
 
 builder.Services.AddControllers()
                 .AddNewtonsoftJson();
-builder.Services.AddDbContext<RepositoryContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("sqlConnection")));// Database için ekleme 
+builder.Services.ConfigureSqlContext(builder.Configuration);
+builder.Services.ConfigureRepositoryManager();
+builder.Services.ConfigureServiceManager();
 builder.Services.AddEndpointsApiExplorer(); 
 builder.Services.AddSwaggerGen();
 builder.Logging.ClearProviders(); // Mevcut tüm log sağlayıcılarını temizleyin

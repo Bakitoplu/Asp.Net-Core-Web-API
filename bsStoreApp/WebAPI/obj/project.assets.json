@@ -794,6 +794,34 @@
         "runtime": {
           "bin/placeholder/Entities.dll": {}
         }
+      },
+      "Repositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Entities": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "10.0.6"
+        },
+        "compile": {
+          "bin/placeholder/Repositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repositories.dll": {}
+        }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Entities": "1.0.0",
+          "Repositories": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
       }
     }
   },
@@ -2473,6 +2501,16 @@
       "type": "project",
       "path": "../Entities/Entities.csproj",
       "msbuildProject": "../Entities/Entities.csproj"
+    },
+    "Repositories/1.0.0": {
+      "type": "project",
+      "path": "../Repositories/Repositories.csproj",
+      "msbuildProject": "../Repositories/Repositories.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2485,6 +2523,8 @@
       "Microsoft.EntityFrameworkCore.Design >= 10.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 10.0.6",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 10.0.1",
+      "Repositories >= 1.0.0",
+      "Services >= 1.0.0",
       "Swashbuckle.AspNetCore.SwaggerGen >= 10.1.7",
       "Swashbuckle.AspNetCore.SwaggerUI >= 10.1.7"
     ]
@@ -2516,6 +2556,12 @@
           "projectReferences": {
             "/Users/bakitoplu/Desktop/Asp.Net Core Web API/bsStoreApp/Entities/Entities.csproj": {
               "projectPath": "/Users/bakitoplu/Desktop/Asp.Net Core Web API/bsStoreApp/Entities/Entities.csproj"
+            },
+            "/Users/bakitoplu/Desktop/Asp.Net Core Web API/bsStoreApp/Repositories/Repositories.csproj": {
+              "projectPath": "/Users/bakitoplu/Desktop/Asp.Net Core Web API/bsStoreApp/Repositories/Repositories.csproj"
+            },
+            "/Users/bakitoplu/Desktop/Asp.Net Core Web API/bsStoreApp/Services/Services.csproj": {
+              "projectPath": "/Users/bakitoplu/Desktop/Asp.Net Core Web API/bsStoreApp/Services/Services.csproj"
             }
           }
         }

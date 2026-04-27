@@ -1,8 +1,9 @@
 using System.Data;
 using Microsoft.AspNetCore.Mvc;
-using WebAPI.Repositories;
+using Repositories.EFCore;
 using Entities.Models;
 using Microsoft.AspNetCore.JsonPatch;
+using Repositories.Contracts;
 
 namespace WebAPI.Controllers
 {
@@ -10,18 +11,19 @@ namespace WebAPI.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
-        private readonly RepositoryContext _context;
-        
-        public BooksController(RepositoryContext context)
+        private readonly IRepositoryManager _manager;
+
+        public BooksController(IRepositoryManager manager)
         {
-            _context = context;
+            _manager = manager;
         }
+
         [HttpGet]
         public IActionResult GetAllBooks()
         {
               try
             {
-                var books = _context.Books.ToList();
+                var books = _manager.Book.GetAllBooks(false);
             return Ok(books); 
 
             }
@@ -38,11 +40,10 @@ namespace WebAPI.Controllers
         {
             try
             {
-                var book = _context
-                .Books
-                .Where(b => b.Id.Equals(id)) // Id == girilen id ise sonuç döndür
-                .SingleOrDefault(); // Tek değer gelsin gelmiyorsa Null
-            if(book is null)
+                var book = _manager
+                .Book
+                .GetOneBooksById(id,false);
+                if (book is null)
                 return NotFound(); // Eğer null gelirse 404 kodu döndürsün
 
             return Ok(book);
@@ -61,8 +62,8 @@ namespace WebAPI.Controllers
             {
                 if (book is null)
                     return BadRequest();  //400
-                _context.Books.Add(book);
-                _context.SaveChanges();
+                _manager.Book.CreateOneBook(book);
+                _manager.Save();
                     return StatusCode(201, book);
             }
             catch (System.Exception ex)
@@ -77,10 +78,10 @@ namespace WebAPI.Controllers
             try
             {
                 // check book
-            var entity = _context
-                .Books
-                .Where(b => b.Id.Equals(id))
-                .SingleOrDefault();
+            var entity = _manager
+                .Book
+                .GetOneBooksById(id,true );
+                
             if(entity is null)
                 return NotFound(); // 404
 
@@ -91,8 +92,7 @@ namespace WebAPI.Controllers
             entity.Title = book.Title; 
             entity.Price = book.Price; 
 
-            _context.SaveChanges();
-            _context.Books.Add(book);
+            _manager.Save();
             return Ok(book);
             }
             catch (Exception ex)
@@ -106,18 +106,17 @@ namespace WebAPI.Controllers
         {
             try
             {
-                var entity = _context
-                .Books
-                .Where(b => b.Id.Equals(id))
-                .SingleOrDefault();
+                var entity = _manager
+                .Book
+                .GetOneBooksById(id,true);
                 if (entity is null)
                 return NotFound(new
                 {
                     statusCode = 404, 
                     message = $"Book with id:{id} could not found"
                 }); //404
-            _context.Books.Remove(entity);
-            _context.SaveChanges();
+            _manager.Book.DeleteOneBook(entity);
+            _manager.Save();
             return NoContent();
             }
             catch (Exception ex)
@@ -131,11 +130,11 @@ namespace WebAPI.Controllers
             [FromBody] JsonPatchDocument<Book> bookPatch)
         {
             // check entity
-            var entity = _context.Books.Where(b => b.Id.Equals(id)).SingleOrDefault();
+            var entity = _manager.Book.GetOneBooksById(id,true);
             if (entity is null)
                 return NotFound(); // 404
             bookPatch.ApplyTo(entity);
-            _context.SaveChanges();
+            _manager.Book.Update(entity);
              return NoContent (); //204
         }
     }
